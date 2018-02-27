@@ -179,8 +179,7 @@ public class CallCenterBean implements CallCenterFachada{
 				}
 			}
 
-		}
-		
+		}		
 		return dispatcher;
 	}
     
