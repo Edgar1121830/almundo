@@ -82,7 +82,7 @@ public class AlmundoControl implements Serializable{
 		try {
 			if(llamadas.size()<=10) {
 					synchronized (d) {
-						d= services.llamadaEnEspera(llamadas, empleados,dispatcher.getTiempoDuracion());
+						d= services.asignarLlamada(empleados, llamadas);
 					}
 			}else {
 				List<Llamada> restantes = new ArrayList<Llamada>();
@@ -90,16 +90,13 @@ public class AlmundoControl implements Serializable{
 					if(i<=10) {
 						synchronized (d) {
 							d= services.asignarLlamada(empleados, llamadas);
-							if(d.getReceptorLlamada()==null) {
-								
-							}
 							llamadas.remove(i);
 						}
 					}else {
 						Llamada llamadaRestante = new Llamada();
 						restantes.add(llamadaRestante);
+						d= services.llamadaEnEspera(restantes, empleados,dispatcher.getTiempoDuracion());
 					}
-					
 				}
 			}
 			
