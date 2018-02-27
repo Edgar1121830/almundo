@@ -17,10 +17,12 @@ import org.junit.Test;
 
 import co.com.almundo.enums.EstadoEnum;
 import co.com.almundo.modelo.Director;
+import co.com.almundo.modelo.Dispatcher;
 import co.com.almundo.modelo.Empleado;
 import co.com.almundo.modelo.Llamada;
 import co.com.almundo.modelo.Operario;
 import co.com.almundo.modelo.Supervisor;
+import co.com.almundo.web.control.AlmundoControl;
 
 @Stateless
 @SessionScoped
@@ -305,10 +307,38 @@ public class DispacherTestLlamadas {
 	}
 
 	
-	
+	/**
+	 * metodo test que se encarga de generar asignar los dispacher, si no hay un dispatcher libre para una 
+	 * llamada, envia a la llamada a un lista de esperar hasta que se desocupe un empleado
+	 */
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		/*
+		 * metodo de prueba para asignar llamada
+		 */
+		try {
+			Dispatcher dispatcher = new Dispatcher();
+			AlmundoControl almundoControl = new AlmundoControl();
+			
+			if(empleados.size()>0 && llamadas.size()>0) {
+				/*
+				 * valida si la hay disponibilidad de llamadas para despachar
+				 */
+				dispatcher = almundoControl.asignarLlamada(empleados, llamadas);
+				/*
+				 * si todos los dispacher estan ocupados, asiga una llamada a espera para un empleado que termine primero la llamada
+				 */
+				if(dispatcher.getReceptorLlamada()!=null && !dispatcher.getReceptorLlamada().equals("")) {
+					dispatcher  = almundoControl.asignarLlamadaEnEspera(empleados, llamadas,dispatcher);
+				}
+			}else {
+				fail("No se tiene datos para realizar la asignacion");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail("Error al asignar las llamadas a un empleado");
+		}
 	}
 
 }

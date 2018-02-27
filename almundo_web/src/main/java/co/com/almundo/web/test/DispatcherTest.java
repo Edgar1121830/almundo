@@ -309,12 +309,6 @@ public class DispatcherTest {
 				 * valida si la hay disponibilidad de llamadas para despachar
 				 */
 				dispatcher = almundoControl.asignarLlamada(empleados, llamadas);
-				/*
-				 * si todos los dispacher estan ocupados, asiga una llamada a espera para un empleado que termine primero la llamada
-				 */
-				if(dispatcher.getReceptorLlamada()!=null && !dispatcher.getReceptorLlamada().equals("")) {
-					dispatcher  = almundoControl.asignarLlamadaEnEspera(empleados, llamadas,dispatcher);
-				}
 			}else {
 				fail("No se tiene datos para realizar la asignacion");
 			}
