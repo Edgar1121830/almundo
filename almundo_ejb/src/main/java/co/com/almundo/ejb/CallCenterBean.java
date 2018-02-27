@@ -85,7 +85,7 @@ public class CallCenterBean implements CallCenterFachada{
 			if(empleadoRecep instanceof Operario) {
 				Operario e = (Operario) empleadoRecep;
 				if(e.isDisponibilidad()){
-					dispatcher.setDisponible(true);
+					dispatcher.setDisponible(false);
 					dispatcher.setHoraLlamadaIncio(new Timestamp(llamada.getHoraLlamada().getTime()));
 					dispatcher.setNumeroLlamadas(numLlamadas);
 					dispatcher.setReceptorLlamada(empleadoRecep);
@@ -96,7 +96,7 @@ public class CallCenterBean implements CallCenterFachada{
 			}else if(empleadoRecep instanceof Supervisor) {
 				Supervisor e = (Supervisor) empleadoRecep;
 				if(e.isDisponibilidad()){
-					dispatcher.setDisponible(true);
+					dispatcher.setDisponible(false);
 					dispatcher.setHoraLlamadaIncio(new Timestamp(llamada.getHoraLlamada().getTime()));
 					dispatcher.setNumeroLlamadas(numLlamadas);
 					dispatcher.setReceptorLlamada(empleadoRecep);
@@ -107,7 +107,7 @@ public class CallCenterBean implements CallCenterFachada{
 			}else if(empleadoRecep instanceof Director) {
 				Director e = (Director) empleadoRecep;
 				if(e.isDisponibilidad()){
-					dispatcher.setDisponible(true);
+					dispatcher.setDisponible(false);
 					dispatcher.setHoraLlamadaIncio(new Timestamp(llamada.getHoraLlamada().getTime()));
 					dispatcher.setNumeroLlamadas(numLlamadas);
 					dispatcher.setReceptorLlamada(empleadoRecep);
@@ -181,7 +181,7 @@ public class CallCenterBean implements CallCenterFachada{
 
 		}
 		
-		return null;
+		return dispatcher;
 	}
     
    
