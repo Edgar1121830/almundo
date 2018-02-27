@@ -31,32 +31,61 @@ public class DispacherTestLlamadas {
 	/**
 	 * creacion de varaiables
 	 */
-	private Llamada llamada = new Llamada();
-	private Llamada llamada2 = new Llamada();
-	private Llamada llamada3 = new Llamada();
-	private Llamada llamada4 = new Llamada();
-	private Llamada llamada5 = new Llamada();
-	private Llamada llamada6 = new Llamada();
-	private Llamada llamada7 = new Llamada();
-	private Llamada llamada8 = new Llamada();
-	private Llamada llamada9 = new Llamada();
-	private Llamada llamada10 = new Llamada();
-	private Llamada llamada11 = new Llamada();
-	private Llamada llamada12 = new Llamada();
-	private Empleado empleado = new Empleado();
-	private Empleado empleado1 = new Empleado();
-	private Empleado empleado2 = new Empleado();
-	private Empleado empleado3 = new Empleado();
-	private Operario operario = new Operario();
-	private Operario operario1 = new Operario();
-	private Operario operario2 = new Operario();
-	private Supervisor supervisor = new Supervisor();
-	private Director director = new Director();
-	private List<Llamada> llamadas = new ArrayList<Llamada>();
-	private List<Empleado> empleados = new ArrayList<Empleado>();
-	private List<Operario> operarios = new ArrayList<Operario>();
+	private Llamada llamada;
+	private Llamada llamada2;
+	private Llamada llamada3;
+	private Llamada llamada4;
+	private Llamada llamada5;
+	private Llamada llamada6;
+	private Llamada llamada7;
+	private Llamada llamada8;
+	private Llamada llamada9;
+	private Llamada llamada10;
+	private Llamada llamada11;
+	private Llamada llamada12;
+	private Empleado empleado;
+	private Empleado empleado1;
+	private Empleado empleado2;
+	private Empleado empleado3;
+	private Operario operario;
+	private Operario operario1;
+	private Operario operario2;
+	private Supervisor supervisor;
+	private Director director;
+	private List<Llamada> llamadas;
+	private List<Empleado> empleados;
+	private List<Operario> operarios;
 
-	
+	/**
+	 * constructor
+	 */
+	public DispacherTestLlamadas() {
+		llamada = new Llamada();
+		llamada2 = new Llamada();
+		llamada3 = new Llamada();
+		llamada4 = new Llamada();
+		llamada5 = new Llamada();
+		llamada6 = new Llamada();
+		llamada7 = new Llamada();
+		llamada8 = new Llamada();
+		llamada9 = new Llamada();
+		llamada10 = new Llamada();
+		llamada11 = new Llamada();
+		llamada12 = new Llamada();
+		empleado = new Empleado();
+		empleado1 = new Empleado();
+		empleado2 = new Empleado();
+		empleado3 = new Empleado();
+		operario = new Operario();
+		operario1 = new Operario();
+		operario2 = new Operario();
+		supervisor = new Supervisor();
+		director = new Director();
+		llamadas = new ArrayList<Llamada>();
+		empleados = new ArrayList<Empleado>();
+		operarios = new ArrayList<Operario>();
+	}
+
 	/**
 	 * metodo que se encarga de generar el personal para la prueba
 	 */
