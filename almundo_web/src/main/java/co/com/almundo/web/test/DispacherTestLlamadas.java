@@ -330,6 +330,7 @@ public class DispacherTestLlamadas {
 				 */
 				if(dispatcher.getReceptorLlamada()!=null && !dispatcher.getReceptorLlamada().equals("")) {
 					dispatcher  = almundoControl.asignarLlamadaEnEspera(empleados, llamadas,dispatcher);
+					assertTrue("Se asignó empleado a la llamda", !dispatcher.getReceptorLlamada().equals(""));
 				}
 			}else {
 				fail("No se tiene datos para realizar la asignacion");

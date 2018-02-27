@@ -309,6 +309,7 @@ public class DispatcherTest {
 				 * valida si la hay disponibilidad de llamadas para despachar
 				 */
 				dispatcher = almundoControl.asignarLlamada(empleados, llamadas);
+				assertTrue("Empleado asigando a un llamada", !dispatcher.getReceptorLlamada().equals(""));
 			}else {
 				fail("No se tiene datos para realizar la asignacion");
 			}
